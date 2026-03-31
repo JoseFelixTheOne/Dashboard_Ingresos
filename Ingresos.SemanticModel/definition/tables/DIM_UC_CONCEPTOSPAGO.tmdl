@@ -1,0 +1,115 @@
+table DIM_UC_CONCEPTOSPAGO
+	lineageTag: 9092f3f0-74e4-4c67-9a73-4a7bb7a0f478
+
+	column IDConceptos
+		dataType: int64
+		formatString: 0
+		lineageTag: a0977925-7f4e-4803-ace1-82ab3acce320
+		summarizeBy: none
+		sourceColumn: IDConceptos
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDDependencia
+		dataType: string
+		lineageTag: 25f428ab-a95d-4b40-84e8-e467b4dbe4a2
+		summarizeBy: none
+		sourceColumn: IDDependencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDPerAcad
+		dataType: string
+		lineageTag: 8707e1e5-1447-4bf0-8879-a163cf3a3fb3
+		summarizeBy: none
+		sourceColumn: IDPerAcad
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDSeccionC
+		dataType: string
+		lineageTag: bed73ca4-1435-4227-ad26-b2255cfa977c
+		summarizeBy: none
+		sourceColumn: IDSeccionC
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDConcepto
+		dataType: string
+		lineageTag: e9782c82-0251-414a-a7c9-9feec9758353
+		summarizeBy: none
+		sourceColumn: IDConcepto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDCuenta
+		dataType: string
+		lineageTag: 5529012b-4b83-4961-b608-74bf1168bc11
+		summarizeBy: none
+		sourceColumn: IDCuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDEscuela
+		dataType: string
+		lineageTag: e67dce1a-fe8a-4453-84cf-6a830faafcb8
+		summarizeBy: none
+		sourceColumn: IDEscuela
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDSede
+		dataType: string
+		lineageTag: 5f56de86-ba4f-4d84-8428-2dd629175678
+		summarizeBy: none
+		sourceColumn: IDSede
+
+		annotation SummarizationSetBy = Automatic
+
+	column FecInic
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bdfd6538-6409-4936-b769-60908c7c3fb4
+		summarizeBy: none
+		sourceColumn: FecInic
+
+		variation Variación
+			isDefault
+			relationship: c9313640-2645-4a5d-8124-6e56eb5c759d
+			defaultHierarchy: LocalDateTable_711fb149-d1af-4638-9ea4-7bef02d377bf.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Descripcion
+		dataType: string
+		lineageTag: f3423a1b-7d90-4f20-8cb7-6e1fbd138b9a
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDServicio
+		dataType: string
+		lineageTag: 6ab9812c-aed6-4e70-bb0e-ace94e3c962b
+		summarizeBy: none
+		sourceColumn: IDServicio
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_UC_CONCEPTOSPAGO = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_UC_CONCEPTOSPAGO = Origen{[Schema="gold",Item="DIM_UC_CONCEPTOSPAGO"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_UC_CONCEPTOSPAGO,{"FechaCarga", "FechaModificacion"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Columnas quitadas", {"IDConceptos"}, ID_Conceptos, {"ID_Conceptos"}, "ID_Conceptos", JoinKind.Inner)
+				in
+				    #"Consultas combinadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

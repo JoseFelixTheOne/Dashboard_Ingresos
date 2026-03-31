@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 17.5
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 207.33333333333337,
+            "y": 347.66666666666663
+          },
+          "nodeIndex": "DIM_UC_CONCEPTOSPAGO",
+          "nodeLineageTag": "9092f3f0-74e4-4c67-9a73-4a7bb7a0f478",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 650.333333333333,
+            "y": 425
+          },
+          "nodeIndex": "FACT_UC_INGRESOS",
+          "nodeLineageTag": "7a66266e-6628-4e12-bad5-e672d3a39532",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 207.33333333333337,
+            "y": 694.33333333333337
+          },
+          "nodeIndex": "DIM_OR_PERIODO",
+          "nodeLineageTag": "e330ed30-9aab-4327-ae03-e5d228440a62",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 205.33333333333326,
+            "y": 59.666666666666657
+          },
+          "nodeIndex": "DIM_UC_CENTROCOSTO",
+          "nodeLineageTag": "ffa78b78-f9bc-4932-963f-5f95d0319c79",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1066.666666666667,
+            "y": 61.333333333333329
+          },
+          "nodeIndex": "DIM_UC_ESCUELA",
+          "nodeLineageTag": "1dc8f3eb-425d-449a-80fb-d3d4ed597a29",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1127.9999999999998,
+            "y": 728.00000000000011
+          },
+          "nodeIndex": "DIM_UC_SERVICIO",
+          "nodeLineageTag": "fc883607-ceae-4fe1-ad0f-8e7623bb2173",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1167.75,
+            "y": 370.83333333333331
+          },
+          "nodeIndex": "DIM_UC_PERSONA",
+          "nodeLineageTag": "c7edec49-199d-47de-9bfe-d405541ac0a9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 660.16666666666652,
+            "y": 23.916666666666657
+          },
+          "nodeIndex": "DIM_UC_CUENTA",
+          "nodeLineageTag": "d37264ca-d14e-4570-ba5c-044ee43d6d6e",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

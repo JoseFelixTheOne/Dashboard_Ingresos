@@ -1,0 +1,77 @@
+table DIM_UC_CUENTA
+	lineageTag: d37264ca-d14e-4570-ba5c-044ee43d6d6e
+
+	column ID_Cuenta
+		dataType: int64
+		formatString: 0
+		lineageTag: a2493db6-4404-453e-89de-60c441f5e5be
+		summarizeBy: none
+		sourceColumn: ID_Cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Dependencia
+		dataType: string
+		lineageTag: e3d4368f-6b6f-4916-8d5e-4041a7fab7b7
+		summarizeBy: none
+		sourceColumn: COD_Dependencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Cuenta
+		dataType: string
+		lineageTag: 56c6c415-7cca-4a0b-a6cf-bc0610660617
+		summarizeBy: none
+		sourceColumn: COD_Cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: adcf29cf-03dd-4bed-84a7-1e823b9569bb
+		summarizeBy: none
+		sourceColumn: COD_Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_CuentaResumen
+		dataType: int64
+		formatString: 0
+		lineageTag: 8df66604-57a6-43b4-9c59-4d19c8193684
+		summarizeBy: none
+		sourceColumn: COD_CuentaResumen
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		lineageTag: ffee695a-321f-40cf-b2f1-caa0c245bdfb
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		lineageTag: 324a5021-cdbc-4582-8fee-2c4d5cc42754
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_UC_CUENTA = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_UC_CUENTA = Origen{[Schema="gold",Item="DIM_UC_CUENTA"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_UC_CUENTA,{"FechaCarga", "FechaModificacion", "UsuarioCreacion", "UsuarioModificacion", "Servidor"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each ([COD_Dependencia] = "UCCI"))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

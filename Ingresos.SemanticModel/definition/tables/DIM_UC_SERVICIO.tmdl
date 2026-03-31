@@ -1,0 +1,67 @@
+table DIM_UC_SERVICIO
+	lineageTag: fc883607-ceae-4fe1-ad0f-8e7623bb2173
+
+	column ID_Servicio
+		dataType: int64
+		formatString: 0
+		lineageTag: ccd841d0-9383-4610-b32f-6ee59845d342
+		summarizeBy: none
+		sourceColumn: ID_Servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Servicio
+		dataType: string
+		lineageTag: 2972582b-9515-427c-bc8a-9d0b04b17ea0
+		summarizeBy: none
+		sourceColumn: COD_Servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Dependencia
+		dataType: string
+		lineageTag: 36aa26e5-6c5a-4311-92cb-9bf5f194ae51
+		summarizeBy: none
+		sourceColumn: COD_Dependencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Servicio
+		dataType: string
+		lineageTag: d7db83a4-267e-475c-9b85-18290b65a4b6
+		summarizeBy: none
+		sourceColumn: Servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServicioAbrev
+		dataType: string
+		lineageTag: f161aeb7-7baa-4dbb-9a21-1a2b5bb9938b
+		summarizeBy: none
+		sourceColumn: ServicioAbrev
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Cuenta
+		dataType: string
+		lineageTag: 27244314-8bdf-4b5b-b8fa-15ddebfc17e7
+		summarizeBy: none
+		sourceColumn: COD_Cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_UC_SERVICIO = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_UC_SERVICIO = Origen{[Schema="gold",Item="DIM_UC_SERVICIO"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_UC_SERVICIO,{"FechaCarga", "FechaModificacion", "UsuarioCreacion", "UsuarioModificacion", "Servidor"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each ([COD_Dependencia] = "UCCI"))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

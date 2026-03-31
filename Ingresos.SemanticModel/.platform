@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Ingresos"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "89fc45cd-f4dd-4020-a2ea-25749c78ad8d"
+  }
+}

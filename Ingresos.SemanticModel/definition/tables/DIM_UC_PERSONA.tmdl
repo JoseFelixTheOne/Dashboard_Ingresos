@@ -1,0 +1,233 @@
+table DIM_UC_PERSONA
+	lineageTag: c7edec49-199d-47de-9bfe-d405541ac0a9
+
+	column ID_PERSONA
+		dataType: int64
+		formatString: 0
+		lineageTag: 20fabfdc-71c4-4cbb-94db-542652333a62
+		summarizeBy: none
+		sourceColumn: ID_PERSONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDPERSONA
+		dataType: string
+		lineageTag: 64bc1c51-ca56-449f-bce0-e34cbdb1c461
+		summarizeBy: none
+		sourceColumn: IDPERSONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDPERSONAN
+		dataType: int64
+		formatString: 0
+		lineageTag: 6248a611-ea94-4333-975b-4bf09ab54ca3
+		summarizeBy: sum
+		sourceColumn: IDPERSONAN
+
+		annotation SummarizationSetBy = Automatic
+
+	column TipoDocumento
+		dataType: string
+		lineageTag: e7d3d418-8b17-48c2-8103-ff8828c2fbbf
+		summarizeBy: none
+		sourceColumn: TipoDocumento
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMERO_DOCUMENTO
+		dataType: string
+		lineageTag: 1c20d2f6-e409-40f6-86b4-a9c56bcd496e
+		summarizeBy: none
+		sourceColumn: NUMERO_DOCUMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMBRES_COMPLETOS
+		dataType: string
+		lineageTag: aa08b9d4-e923-490e-b0c6-70599294bef5
+		summarizeBy: none
+		sourceColumn: NOMBRES_COMPLETOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column GENERO
+		dataType: string
+		lineageTag: 3e1dd161-81bd-47a7-8d16-6fbd07a84c05
+		summarizeBy: none
+		sourceColumn: GENERO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FECHA_NACIMIENTO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a8a7e441-314f-4901-b0b8-d075c8f67251
+		summarizeBy: none
+		sourceColumn: FECHA_NACIMIENTO
+
+		variation Variación
+			isDefault
+			relationship: ee271c3b-55ef-4cc9-8b0d-081fb144e551
+			defaultHierarchy: LocalDateTable_db20c2d5-97de-40ce-ad12-8000fa86b626.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DEPARTAMENTO
+		dataType: string
+		lineageTag: 09087e85-3c88-4282-acfc-95fed5486d0f
+		summarizeBy: none
+		sourceColumn: DEPARTAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROVINCIA
+		dataType: string
+		lineageTag: 0c15779c-9250-498f-a57b-dd20e3be069b
+		summarizeBy: none
+		sourceColumn: PROVINCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISTRITO
+		dataType: string
+		lineageTag: ceabecab-042d-46df-af6b-d8741faad79e
+		summarizeBy: none
+		sourceColumn: DISTRITO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIRECCION
+		dataType: string
+		lineageTag: 218f068e-18c0-4019-b3da-0e10548d7a36
+		summarizeBy: none
+		sourceColumn: DIRECCION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAPITAL
+		dataType: string
+		lineageTag: 2db063c6-04e0-4afd-8cfe-b35f0d8f8e5d
+		summarizeBy: none
+		sourceColumn: CAPITAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAIS
+		dataType: string
+		lineageTag: c6aa0313-27b1-4e36-b6ba-76977960092b
+		summarizeBy: none
+		sourceColumn: PAIS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONO_CASA
+		dataType: string
+		lineageTag: 174047b2-8ba5-414b-99b3-5f4926c42db3
+		summarizeBy: none
+		sourceColumn: TELEFONO_CASA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CELULAR
+		dataType: string
+		lineageTag: 25557cec-ea80-4e78-a78a-071399ecaa6e
+		summarizeBy: none
+		sourceColumn: CELULAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column RPM
+		dataType: string
+		lineageTag: d4f6a2f0-45c2-4fa1-b8cb-7be573185f26
+		summarizeBy: none
+		sourceColumn: RPM
+
+		annotation SummarizationSetBy = Automatic
+
+	column REFERENCIAL
+		dataType: string
+		lineageTag: 43a24ce6-1452-478d-8fb3-d2f45701c8d6
+		summarizeBy: none
+		sourceColumn: REFERENCIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CORREO_INSTITUCIONAL
+		dataType: string
+		lineageTag: b3d7f8f2-bfb1-4b20-9818-3162832c5224
+		summarizeBy: none
+		sourceColumn: CORREO_INSTITUCIONAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CORREO_PERSONAL
+		dataType: string
+		lineageTag: c88ba6b0-fd15-42e9-a492-1b6ddc4e0be9
+		summarizeBy: none
+		sourceColumn: CORREO_PERSONAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CORREO_TRABAJO
+		dataType: string
+		lineageTag: c3fcf946-feb3-4f45-af1e-e51a1eb75112
+		summarizeBy: none
+		sourceColumn: CORREO_TRABAJO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CORREO_CFU
+		dataType: string
+		lineageTag: a6cab286-f3a8-4757-ba9e-ed0923d951b3
+		summarizeBy: none
+		sourceColumn: CORREO_CFU
+
+		annotation SummarizationSetBy = Automatic
+
+	column MENTOR
+		dataType: string
+		lineageTag: e804157c-178b-4831-a807-82aea5b97ec5
+		summarizeBy: none
+		sourceColumn: MENTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEC_CREACION_BANNER
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3c538c70-eca6-4b5e-af33-cdfded23fa1c
+		summarizeBy: none
+		sourceColumn: FEC_CREACION_BANNER
+
+		variation Variación
+			isDefault
+			relationship: 3ba1ee9e-de85-40e8-b791-5bc7398d5979
+			defaultHierarchy: LocalDateTable_8fd670d2-fd1b-4a84-bed7-7fb10fd7a911.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO
+		dataType: string
+		lineageTag: 8db67314-8493-4a68-82f8-2058da2bd1b8
+		summarizeBy: none
+		sourceColumn: ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_UC_PERSONA = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_UC_PERSONA = Origen{[Schema="gold",Item="DIM_UC_PERSONA"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_UC_PERSONA,{"USUARIOCREACION", "FECHACREACION", "FECHAMODIFICACION", "SERVIDOR"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

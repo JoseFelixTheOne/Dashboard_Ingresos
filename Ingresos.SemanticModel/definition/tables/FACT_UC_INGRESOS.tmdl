@@ -1,0 +1,223 @@
+table FACT_UC_INGRESOS
+	lineageTag: 7a66266e-6628-4e12-bad5-e672d3a39532
+
+	column ID_Ingreso
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d90f37f-1b70-4819-bdc7-db40ceea47ff
+		summarizeBy: sum
+		sourceColumn: ID_Ingreso
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CentroCosto
+		dataType: int64
+		formatString: 0
+		lineageTag: 98e50610-85b8-4276-b3f9-976a61b5b6ef
+		summarizeBy: none
+		sourceColumn: ID_CentroCosto
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Servicio
+		dataType: int64
+		formatString: 0
+		lineageTag: 4cad3cd8-f828-4f30-a2d6-d1a14dd1d106
+		summarizeBy: none
+		sourceColumn: ID_Servicio
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Escuela
+		dataType: int64
+		formatString: 0
+		lineageTag: 864de2c9-b45b-4f64-933b-1e6f9e65ec24
+		summarizeBy: none
+		sourceColumn: ID_Escuela
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Persona
+		dataType: int64
+		formatString: 0
+		lineageTag: eff4f53d-a6e9-4b4b-b813-26b4275cb154
+		summarizeBy: none
+		sourceColumn: ID_Persona
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Periodo
+		dataType: int64
+		formatString: 0
+		lineageTag: 507c83f0-f5c5-4b9c-a2fe-e91181762982
+		summarizeBy: none
+		sourceColumn: ID_Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Cuenta
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ceb3799-145a-460c-879e-f6143eb432ca
+		summarizeBy: none
+		sourceColumn: ID_Cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Conceptos
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ae87ac8-410c-4fc8-a87e-7e6fba5d6b60
+		summarizeBy: none
+		sourceColumn: ID_Conceptos
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaEmi
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b70bff91-0987-49f4-8828-cce94307b73a
+		summarizeBy: none
+		sourceColumn: FechaEmi
+
+		variation Variación
+			isDefault
+			relationship: 2052f0a9-4f95-43e1-baa2-7fcb25984aa5
+			defaultHierarchy: LocalDateTable_76cc62ef-e7e3-45c6-a26b-4c4a73148859.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column COD_Sede
+		dataType: string
+		lineageTag: 7178809d-6b7e-4a85-b172-238488352b49
+		summarizeBy: none
+		sourceColumn: COD_Sede
+
+		annotation SummarizationSetBy = Automatic
+
+	column Programa
+		dataType: string
+		lineageTag: 45ebd743-6a23-44d7-8ab5-b124513f28c9
+		summarizeBy: none
+		sourceColumn: Programa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nivel
+		dataType: string
+		lineageTag: fd47601a-a227-4194-be47-928f5b108d8f
+		summarizeBy: none
+		sourceColumn: Nivel
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Dependencia
+		dataType: string
+		lineageTag: 4ab599ea-e9bf-4826-95b7-00c4f8bb0dfb
+		summarizeBy: none
+		sourceColumn: COD_Dependencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Tipo
+		dataType: int64
+		formatString: 0
+		lineageTag: e158e5fd-97d9-4568-abaf-e9a0c30384b3
+		summarizeBy: sum
+		sourceColumn: COD_Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Serie
+		dataType: int64
+		formatString: 0
+		lineageTag: acab8e09-9655-4b5b-b019-61cc7cfea5fe
+		summarizeBy: sum
+		sourceColumn: COD_Serie
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_DocuVenta
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f5870e8-d382-4394-bd31-aa60081082f1
+		summarizeBy: sum
+		sourceColumn: COD_DocuVenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Alumno
+		dataType: string
+		lineageTag: bbf580bd-e092-4538-874f-462a0dbaaa40
+		summarizeBy: none
+		sourceColumn: COD_Alumno
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_SeccionC
+		dataType: string
+		lineageTag: b8a54223-f6fe-44c5-9ad2-2422ba93db32
+		summarizeBy: none
+		sourceColumn: COD_SeccionC
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Concepto
+		dataType: string
+		lineageTag: e2e761e2-2b73-46aa-8cb2-211a36f6a561
+		summarizeBy: none
+		sourceColumn: COD_Concepto
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 87829485-67b1-43fe-88b3-08c73693a40d
+		summarizeBy: sum
+		sourceColumn: COD_Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_PerAcad
+		dataType: string
+		lineageTag: b3cad008-ee59-4adc-b6e7-8029ea2f333e
+		summarizeBy: none
+		sourceColumn: COD_PerAcad
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Cuenta
+		dataType: string
+		lineageTag: c692b46b-4548-470c-b4c1-e5c4bcfa6240
+		summarizeBy: none
+		sourceColumn: COD_Cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto
+		dataType: double
+		lineageTag: 1ed2fac3-83b9-4194-abc3-c34a358de23c
+		summarizeBy: sum
+		sourceColumn: Monto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FACT_UC_INGRESOS = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_FACT_UC_INGRESOS = Origen{[Schema="gold",Item="FACT_UC_INGRESOS"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_FACT_UC_INGRESOS,{"FechaCarga", "FechaModificacion", "UsuarioCreacion", "UsuarioModificacion", "Servidor"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

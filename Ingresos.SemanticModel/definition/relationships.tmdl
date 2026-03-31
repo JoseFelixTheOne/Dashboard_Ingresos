@@ -1,0 +1,53 @@
+relationship 2052f0a9-4f95-43e1-baa2-7fcb25984aa5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FACT_UC_INGRESOS.FechaEmi
+	toColumn: LocalDateTable_76cc62ef-e7e3-45c6-a26b-4c4a73148859.Date
+
+relationship d3ffc785-13a3-45bb-ba1c-60011fb1e528
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_OR_PERIODO.FEC_CREACION_BANNER
+	toColumn: LocalDateTable_f32c999e-4452-4f9c-9195-af71a0b52707.Date
+
+relationship ee271c3b-55ef-4cc9-8b0d-081fb144e551
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_UC_PERSONA.FECHA_NACIMIENTO
+	toColumn: LocalDateTable_db20c2d5-97de-40ce-ad12-8000fa86b626.Date
+
+relationship 3ba1ee9e-de85-40e8-b791-5bc7398d5979
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_UC_PERSONA.FEC_CREACION_BANNER
+	toColumn: LocalDateTable_8fd670d2-fd1b-4a84-bed7-7fb10fd7a911.Date
+
+relationship c9313640-2645-4a5d-8124-6e56eb5c759d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DIM_UC_CONCEPTOSPAGO.FecInic
+	toColumn: LocalDateTable_711fb149-d1af-4638-9ea4-7bef02d377bf.Date
+
+relationship f5fa9bef-dbd3-a99f-39a6-a477a383adbe
+	fromColumn: FACT_UC_INGRESOS.ID_Periodo
+	toColumn: DIM_OR_PERIODO.ID_PERIODO
+
+relationship 4630d88a-5ab4-71b8-1199-f7cc205d0d49
+	fromColumn: FACT_UC_INGRESOS.ID_Conceptos
+	toColumn: DIM_UC_CONCEPTOSPAGO.IDConceptos
+
+relationship e279ef64-b812-fce7-84ec-606755b230d5
+	fromColumn: FACT_UC_INGRESOS.ID_CentroCosto
+	toColumn: DIM_UC_CENTROCOSTO.ID_CentroCosto
+
+relationship 033f8674-3b74-4107-f52c-edb7630e7d68
+	fromColumn: FACT_UC_INGRESOS.ID_Cuenta
+	toColumn: DIM_UC_CUENTA.ID_Cuenta
+
+relationship 7e227aa8-9af5-b109-ca25-cd6919f1d611
+	fromColumn: FACT_UC_INGRESOS.ID_Escuela
+	toColumn: DIM_UC_ESCUELA.ID_Escuela
+
+relationship 92aa779a-2c9d-37d6-6b36-0e64d7481db7
+	fromColumn: FACT_UC_INGRESOS.ID_Persona
+	toColumn: DIM_UC_PERSONA.ID_PERSONA
+
+relationship b2e34bfb-fa78-ed95-531f-6017ed2e9163
+	fromColumn: FACT_UC_INGRESOS.ID_Servicio
+	toColumn: DIM_UC_SERVICIO.ID_Servicio
+

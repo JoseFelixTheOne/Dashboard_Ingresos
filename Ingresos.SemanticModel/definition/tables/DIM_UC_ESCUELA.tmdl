@@ -1,0 +1,67 @@
+table DIM_UC_ESCUELA
+	lineageTag: 1dc8f3eb-425d-449a-80fb-d3d4ed597a29
+
+	column ID_Escuela
+		dataType: int64
+		formatString: 0
+		lineageTag: c5c1b3a6-c0c3-45bc-80e6-5dc7647ebfeb
+		summarizeBy: none
+		sourceColumn: ID_Escuela
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_DEPENDENCIA
+		dataType: string
+		lineageTag: 40c92d93-af68-42bd-818f-df9d07528a9e
+		summarizeBy: none
+		sourceColumn: COD_DEPENDENCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_ESCUELA
+		dataType: string
+		lineageTag: a7af271d-6ba7-4e01-bdd4-215945601d95
+		summarizeBy: none
+		sourceColumn: COD_ESCUELA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_TIPOESC
+		dataType: string
+		lineageTag: 1083bbe9-4243-46d6-b6ae-e77a52bff4e8
+		summarizeBy: none
+		sourceColumn: COD_TIPOESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: 3f562b66-762d-4aa2-a64d-86fc01763128
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomEsc
+		dataType: string
+		lineageTag: 43a467df-7564-4a22-b6a9-18e4a4e762a8
+		summarizeBy: none
+		sourceColumn: NomEsc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_UC_ESCUELA = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_UC_ESCUELA = Origen{[Schema="gold",Item="DIM_UC_ESCUELA"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_UC_ESCUELA,{"USUARIOCREACION", "FECHACREACION", "FECHAMODIFICACION", "SERVIDOR"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each ([COD_DEPENDENCIA] = "UCCI") and ([COD_TIPOESC] = "CIC"))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,67 @@
+table DIM_UC_CENTROCOSTO
+	lineageTag: ffa78b78-f9bc-4932-963f-5f95d0319c79
+
+	column ID_CentroCosto
+		dataType: int64
+		formatString: 0
+		lineageTag: d5911605-0db0-4362-9862-d4248ee4aa26
+		summarizeBy: none
+		sourceColumn: ID_CentroCosto
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_CentroCosto
+		dataType: string
+		lineageTag: dc4eb7f1-b1a2-454a-bdfa-e5e5dfd94027
+		summarizeBy: none
+		sourceColumn: COD_CentroCosto
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Dependencia
+		dataType: string
+		lineageTag: 54417e7b-1dbf-4c7e-b576-32285e3683b0
+		summarizeBy: none
+		sourceColumn: COD_Dependencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_UnidadNegocio
+		dataType: string
+		lineageTag: ab675145-3ecf-4fc5-81e9-e8df83b002b6
+		summarizeBy: none
+		sourceColumn: COD_UnidadNegocio
+
+		annotation SummarizationSetBy = Automatic
+
+	column CentroCosto
+		dataType: string
+		lineageTag: 5409ae78-8cd2-40ea-a03c-a37b24f800f2
+		summarizeBy: none
+		sourceColumn: CentroCosto
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_Estado
+		dataType: int64
+		formatString: 0
+		lineageTag: 42b2cc58-ad57-4032-82da-4c0c000d35f9
+		summarizeBy: none
+		sourceColumn: COD_Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_UC_CENTROCOSTO = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_UC_CENTROCOSTO = Origen{[Schema="gold",Item="DIM_UC_CENTROCOSTO"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_UC_CENTROCOSTO,{"FechaCarga", "FechaModificacion", "UsuarioCreacion", "UsuarioModificacion", "Servidor"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

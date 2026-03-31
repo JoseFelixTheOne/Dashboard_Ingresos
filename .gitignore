@@ -1,0 +1,12 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Extensiones de archivos de datos y cache
+*.pbi
+*.cache
+*.abf
+*.temp
+
+# Archivos de respaldo de Power BI (si guardas un pbix por error)
+*.pbix
+*.pbit

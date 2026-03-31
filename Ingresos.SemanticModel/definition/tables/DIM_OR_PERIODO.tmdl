@@ -1,0 +1,64 @@
+table DIM_OR_PERIODO
+	lineageTag: e330ed30-9aab-4327-ae03-e5d228440a62
+
+	column ID_PERIODO
+		dataType: string
+		lineageTag: 1feee1a7-61a6-4ee2-84f0-302a13c1fe4e
+		summarizeBy: none
+		sourceColumn: ID_PERIODO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DES_PERIODO
+		dataType: string
+		lineageTag: fe52e767-87c0-49af-abbf-73884726d597
+		summarizeBy: none
+		sourceColumn: DES_PERIODO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIP_PERIODO
+		dataType: string
+		lineageTag: 0e8e03ce-4013-4919-a49a-ddc62116695e
+		summarizeBy: none
+		sourceColumn: TIP_PERIODO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEC_CREACION_BANNER
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6dd71491-f241-4c03-8469-2ecd1d3bc160
+		summarizeBy: none
+		sourceColumn: FEC_CREACION_BANNER
+
+		variation Variación
+			isDefault
+			relationship: d3ffc785-13a3-45bb-ba1c-60011fb1e528
+			defaultHierarchy: LocalDateTable_f32c999e-4452-4f9c-9195-af71a0b52707.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTADO
+		dataType: string
+		lineageTag: d4ce6abd-853f-4b4b-bb33-bbc14ece462f
+		summarizeBy: none
+		sourceColumn: ESTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_OR_PERIODO = m
+		mode: import
+		source =
+				let
+				    Origen = Sql.Database("uc-da-dev-east-sql-server.database.windows.net", "uc-da-dev-gold-east-sqldatabase"),
+				    gold_DIM_OR_PERIODO = Origen{[Schema="gold",Item="DIM_OR_PERIODO"]}[Data],
+				    #"Columnas quitadas" = Table.RemoveColumns(gold_DIM_OR_PERIODO,{"USUARIOCREACION", "FECHACREACION", "FECHAMODIFICACION", "SERVIDOR"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each ([ESTADO] = "A"))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,13 @@
+expression ID_Conceptos =
+		let
+		    Origen = FACT_UC_INGRESOS,
+		    #"Columnas quitadas" = Table.RemoveColumns(Origen,{"FechaEmi", "COD_Sede", "Programa", "Nivel", "COD_Dependencia", "COD_Tipo", "COD_Serie", "COD_DocuVenta", "COD_Alumno", "COD_SeccionC", "COD_Concepto", "COD_Ano", "COD_PerAcad", "COD_Cuenta", "Monto", "ID_Ingreso", "ID_CentroCosto", "ID_Servicio", "ID_Escuela", "ID_Persona", "ID_Periodo", "ID_Cuenta"}),
+		    #"Duplicados quitados" = Table.Distinct(#"Columnas quitadas")
+		in
+		    #"Duplicados quitados"
+	lineageTag: 79e41c88-7020-42e1-b54b-590d971f3637
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
