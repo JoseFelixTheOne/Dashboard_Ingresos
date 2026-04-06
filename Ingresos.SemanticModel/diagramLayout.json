@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
-        "y": 17.5
+        "x": 131.25000635782885,
+        "y": 115
       },
       "nodes": [
         {
           "location": {
             "x": 207.33333333333337,
-            "y": 347.66666666666663
+            "y": 359.62499999999994
           },
           "nodeIndex": "DIM_UC_CONCEPTOSPAGO",
           "nodeLineageTag": "9092f3f0-74e4-4c67-9a73-4a7bb7a0f478",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 650.333333333333,
-            "y": 425
+            "y": 436.95833333333331
           },
           "nodeIndex": "FACT_UC_INGRESOS",
           "nodeLineageTag": "7a66266e-6628-4e12-bad5-e672d3a39532",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 207.33333333333337,
-            "y": 694.33333333333337
+            "y": 706.29166666666674
           },
           "nodeIndex": "DIM_OR_PERIODO",
           "nodeLineageTag": "e330ed30-9aab-4327-ae03-e5d228440a62",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 205.33333333333326,
-            "y": 59.666666666666657
+            "y": 71.624999999999972
           },
           "nodeIndex": "DIM_UC_CENTROCOSTO",
           "nodeLineageTag": "ffa78b78-f9bc-4932-963f-5f95d0319c79",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 1066.666666666667,
-            "y": 61.333333333333329
+            "y": 73.291666666666643
           },
           "nodeIndex": "DIM_UC_ESCUELA",
           "nodeLineageTag": "1dc8f3eb-425d-449a-80fb-d3d4ed597a29",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1127.9999999999998,
-            "y": 728.00000000000011
+            "y": 739.95833333333348
           },
           "nodeIndex": "DIM_UC_SERVICIO",
           "nodeLineageTag": "fc883607-ceae-4fe1-ad0f-8e7623bb2173",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1167.75,
-            "y": 370.83333333333331
+            "y": 382.79166666666663
           },
           "nodeIndex": "DIM_UC_PERSONA",
           "nodeLineageTag": "c7edec49-199d-47de-9bfe-d405541ac0a9",
@@ -102,12 +102,25 @@
         {
           "location": {
             "x": 660.16666666666652,
-            "y": 23.916666666666657
+            "y": 35.874999999999972
           },
           "nodeIndex": "DIM_UC_CUENTA",
           "nodeLineageTag": "d37264ca-d14e-4570-ba5c-044ee43d6d6e",
           "size": {
             "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1341.0000063578289,
+            "y": 115
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "f3707971-bad7-4b6e-ad91-c2e4806057b2",
+          "size": {
+            "height": 104,
             "width": 234
           },
           "zIndex": 0

@@ -1,0 +1,32 @@
+table _Medidas
+	lineageTag: f3707971-bad7-4b6e-ad91-c2e4806057b2
+
+	measure 'Total Ingresos' = SUM(FACT_UC_INGRESOS[Monto])
+		lineageTag: 91e2d5a9-734d-42d7-a827-3bd24850fcbe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Columna1
+		dataType: string
+		isHidden
+		lineageTag: 06b4001d-5139-475b-9973-da0031cb79aa
+		summarizeBy: none
+		sourceColumn: Columna1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Medidas = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

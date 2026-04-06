@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["FACT_UC_INGRESOS","DIM_OR_PERIODO","DIM_UC_CENTROCOSTO","DIM_UC_ESCUELA","DIM_UC_SERVICIO","DIM_UC_PERSONA","DIM_UC_CONCEPTOSPAGO","DIM_UC_CUENTA","ID_Conceptos"]
+annotation PBI_QueryOrder = ["FACT_UC_INGRESOS","DIM_OR_PERIODO","DIM_UC_CENTROCOSTO","DIM_UC_ESCUELA","DIM_UC_SERVICIO","DIM_UC_PERSONA","DIM_UC_CONCEPTOSPAGO","DIM_UC_CUENTA","ID_Conceptos","_Medidas"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -26,6 +26,7 @@ ref table LocalDateTable_8fd670d2-fd1b-4a84-bed7-7fb10fd7a911
 ref table DIM_UC_CONCEPTOSPAGO
 ref table LocalDateTable_711fb149-d1af-4638-9ea4-7bef02d377bf
 ref table DIM_UC_CUENTA
+ref table _Medidas
 
 ref cultureInfo es-ES
 
